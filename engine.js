@@ -1,5 +1,5 @@
 /* ============================================================================
- * CLIMA-SHIELD  ·  Climate Adaptation Strategy Simulator
+ * RESIL_OS  ·  Climate Adaptation Strategy Simulator
  * engine.js  —  The simulation / decision engine (NO DOM, fully testable)
  *
  * This module is the MANDATORY core of E-03. It implements, in pure logic:
@@ -405,5 +405,5 @@
   };
 
   if (typeof module !== 'undefined' && module.exports) module.exports = API;
-  global.ClimaShield = API;
+  global.ResilOS = API;
 })(typeof window !== 'undefined' ? window : this);

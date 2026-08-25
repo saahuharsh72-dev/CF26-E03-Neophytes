@@ -1,5 +1,5 @@
 /* ============================================================================
- * CLIMA-SHIELD · app.js
+ * RESIL_OS · app.js
  * UI layer: reads configuration, calls the engine, renders the dashboard,
  * and handles reproducibility (history), stress test, what-if lab & export.
  * The engine (engine.js) produces ALL numerical results; this file only
@@ -7,7 +7,7 @@
  * ==========================================================================*/
 (function () {
   'use strict';
-  var E = window.ClimaShield;
+  var E = window.ResilOS;
   var MODEL_VERSION = '1.0';
 
   /* ----------------------------- state ----------------------------------- */
@@ -20,7 +20,7 @@
     result: null, meta: null, selectedRank: 1, pinned: [],
     history: []
   };
-  var HIST_KEY = 'climashield_history_v1';
+  var HIST_KEY = 'resilos_history_v1';
 
   /* ----------------------------- helpers --------------------------------- */
   function $(id) { return document.getElementById(id); }
@@ -136,8 +136,8 @@
   }
 
   function nextSimId() {
-    var n = parseInt(localStorage.getItem('climashield_counter') || '1041', 10) + 1;
-    localStorage.setItem('climashield_counter', n);
+    var n = parseInt(localStorage.getItem('resilos_counter') || '1041', 10) + 1;
+    localStorage.setItem('resilos_counter', n);
     return 'SIM-' + n;
   }
 
@@ -461,7 +461,7 @@
     $('expCsv').onclick = function () { download(state.meta.simId + '_ranking.csv', rankingCSV(), 'text/csv'); };
     $('expCfg').onclick = function () { download(state.meta.simId + '_config.json', JSON.stringify(state.meta.config, null, 2), 'application/json'); };
     $('copyCfg').onclick = function () {
-      var cmd = 'clima-shield run --seed ' + state.meta.seed + ' --budget ' + state.meta.config.budget + ' --weights ' +
+      var cmd = 'resil_os run --seed ' + state.meta.seed + ' --budget ' + state.meta.config.budget + ' --weights ' +
         Math.round(state.meta.config.weights.flood * 100) + '/' + Math.round(state.meta.config.weights.heat * 100) + '/' + Math.round(state.meta.config.weights.water * 100);
       navigator.clipboard && navigator.clipboard.writeText(cmd);
       $('copyCfg').textContent = 'Copied!'; setTimeout(function () { $('copyCfg').textContent = 'Copy reproducible command'; }, 1500);

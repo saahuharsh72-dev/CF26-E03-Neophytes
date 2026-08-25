@@ -1,4 +1,4 @@
-# CLIMA-SHIELD — Climate Adaptation Strategy Simulator (E-03)
+# RESIL_OS — Climate Adaptation Strategy Simulator (E-03)
 
 A self-contained **simulation / decision engine** that explores many possible
 climate-adaptation strategies, tests them across uncertain futures, respects
@@ -9,13 +9,13 @@ real-world budget constraints, and compares their trade-offs — reproducibly.
 
 ## Run it (no installation needed)
 
-CLIMA-SHIELD is a **static website** (plain HTML/CSS/JS) — there is no build
+RESIL_OS is a **static website** (plain HTML/CSS/JS) — there is no build
 step and nothing to install.
 
 - **Quickest:** double-click `index.html` to open it in your browser.
 - **Recommended (local server):**
   ```bash
-  cd clima-shield
+  cd resil_os
   python3 -m http.server 8000
   # then open http://localhost:8000
   ```
